@@ -30,7 +30,7 @@ function validateGuess(guess) {
 
         if (numGuesses === 10) {
             displayGuesses(guess);
-            displayMessage(`Game Over! Number was ${randomNumber}`);
+            displayMessage(`Game Over! Number was ${randomNumber}`, 'lose');
             endGame();
         } else {
             displayGuesses(guess);
@@ -41,12 +41,12 @@ function validateGuess(guess) {
 
 function checkGuess(guess) {
     if (guess === randomNumber) {
-        displayMessage(`You guessed correctly! Number is ${randomNumber}`);
+        displayMessage(`You guessed correctly! Number is ${randomNumber}`, 'win');
         endGame();
     } else if (guess < randomNumber) {
-        displayMessage("Too low! Try Again!");
+        displayMessage("Too low! Try Again!", 'low');
     } else if (guess > randomNumber) {
-        displayMessage("Too High! Try Again!");
+        displayMessage("Too High! Try Again!", 'high');
     }
 }
 
@@ -57,8 +57,8 @@ function displayGuesses(guess) {
     remaining.innerHTML = `${11 - numGuesses}`;
 }
 
-function displayMessage(message) {
-    lowOrHi.innerHTML = `<h2>${message}</h2>`;
+function displayMessage(message, status) {
+    lowOrHi.innerHTML = `<h2 class="${status}">${message}</h2>`;
 }
 
 function endGame() {
