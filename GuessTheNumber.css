@@ -1,82 +1,101 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    font-family: sans-serif,'cursive';
+    font-family: sans-serif, 'cursive';
     background-color: lightcyan;
 }
 
-h1{
+h1 {
     background-color: #081b31;
     color: #fff;
     height: 5rem;
     line-height: 5rem;
     text-align: center;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;  /* Added padding to ensure text doesn't touch sides */
 }
 
-.rule{
-    margin: 10px auto;
-    padding: 10px;
-}
-
-p{
-    font-size: 20px;
+.rule {
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 1.2rem;
     text-align: center;
-    margin: 15px;
 }
 
-#wrapper{
+p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 20px;
+    line-height: 1.5;
+}
+
+#wrapper {
     box-sizing: border-box;
     text-align: center;
-    width: 750px;
-    height: 533px;
+    width: 90%;
+    max-width: 750px;
+    height: auto;
     background-color: lightcyan;
     color: #081b31;
-    font-size: 25px;
+    font-size: 1.5rem;
     margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-#guess{
+/* Default Styling for Desktop */
+#guess {
     font-size: 55px;
-    margin-top: 90px;
+    margin-top: 60px;
 }
 
-#guessField{
-    width: 550px;
-    height: 100px;
-    font-size: 30px;
+#guessField {
+    width: 100%;
+    max-width: 550px;
+    height: 120px;
+    font-size: 40px;
     border-style: none;
-    margin-top: 25px;
-    font-size: 45px;
+    margin-top: 20px;
     border: 5px solid darkblue;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
-#sub{
+#sub {
     background-color: darkcyan;
     color: white;
-    width: 350px;
-    height: 50px;
+    width: 100%;
+    max-width: 350px;
+    height: 60px;
     border-radius: 25px;
-    font-size: 30px;
+    font-size: 35px;
     border-style: none;
-    margin-top: 30px;
+    margin-top: 40px;
+    cursor: pointer;
+    box-sizing: border-box;
 }
-form #sub:hover{
+
+form #sub:hover {
     background-color: orangered;
 }
 
-.guesses{
+.guesses {
     background-color: lightcyan;
     color: darkblue;
     padding: 7px;
+    font-size: 1.5rem;
 }
 
-.lastResult{
+.lastResult {
     color: darkblue;
     padding: 7px;
+    font-size: 1.5rem;
 }
 
-
-h2{
+h2 {
     background-color: darkcyan;
     color: #fff;
     line-height: 3rem;
@@ -84,14 +103,145 @@ h2{
     margin: 10px auto;
     width: 550px;
     border-radius: 20px;
+    font-size: 1.5rem;
 }
 
 button {
     background-color: darkcyan;
-    color: white;        
-    width: 350px;         
-    height: 50px;          
-    border-radius: 25px;     
-    font-size: 30px;   
+    color: white;
+    width: 100%;
+    max-width: 350px;
+    height: 60px;
+    border-radius: 25px;
+    font-size: 35px;
     border: none;
-} 
+}
+
+/* Responsive Styles */
+
+/* Large Screens (Laptop/Desktops) */
+@media (max-width: 1200px) {
+    #wrapper {
+        width: 85%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    #guess {
+        font-size: 50px;
+    }
+
+    #guessField {
+        font-size: 35px;
+    }
+
+    #sub {
+        font-size: 30px;
+    }
+
+    .rule p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tablets and Smaller Laptops */
+@media (max-width: 1012px) {
+    #wrapper {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #guess {
+        font-size: 45px;
+    }
+
+    #guessField {
+        font-size: 30px;
+        width: 90%;
+    }
+
+    #sub {
+        font-size: 28px;
+        width: 90%;
+    }
+
+    .rule p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Small Tablets / Portrait Tablets */
+@media (max-width: 768px) {
+    #wrapper {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        height: 4.5rem;
+    }
+
+    #guess {
+        font-size: 40px;
+    }
+
+    #guessField {
+        font-size: 28px;
+        width: 85%;
+    }
+
+    #sub {
+        font-size: 25px;
+        width: 85%;
+    }
+
+    .rule p {
+        font-size: 1rem;
+    }
+}
+
+/* Small Screens (iPhone / Smaller Devices) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.25rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+        padding: 0 10px;  /* Padding adjusted for smaller devices */
+    }
+
+    #guess {
+        font-size: 35px;
+    }
+
+    #guessField {
+        width: 80%;
+        font-size: 26px;
+    }
+
+    #sub {
+        font-size: 22px;
+        width: 80%;
+    }
+
+    .rule p {
+        font-size: 1rem;
+    }
+
+    #wrapper {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .guesses, .lastResult {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+}
