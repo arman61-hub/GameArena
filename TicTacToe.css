@@ -1,11 +1,13 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: lightcyan;
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
@@ -13,54 +15,102 @@ h1 {
   color: #fff;
   height: 5rem;
   line-height: 5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem); /* Scales with screen size */
 }
 
 #ins {
-  padding-top: 20px;
-  font-family: Verdana, 'Geneva', Tahoma, sans-serif;
+  padding-top: 10px;
+  margin: 20px;
   color: dodgerblue;
+  font-size: clamp(1rem, 10vw, 2rem); 
 }
 
 .container {
-  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 60vh;
+  margin: 20px;
 }
 
 .game {
-  height: 60vmin;
-  width: 60vmin;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5vmin;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1.6vmin;
+  width: min(60vmin, 90vw); /* Ensures grid doesn't overflow */
+  height: min(60vmin, 90vw);
 }
 
 .box {
-  height: 18vmin;
-  width: 18vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: min(18vmin, 30vw);
+  width: min(18vmin, 30vw);
   border-radius: 1rem;
   border: none;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  font-size: 8vmin;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  font-size: clamp(6vmin, 8vw, 8vmin);
   color: #b0413e;
   background-color: #ffffc7;
+  cursor: pointer;
 }
 
 #print {
-  font-family: Verdana, 'Geneva', Tahoma, sans-serif;
   color: dodgerblue;
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: clamp(1rem, 10vw, 2rem); 
+  margin-bottom: 10px;
 }
 
 #reset-btn {
-  padding: 1rem;
-  font-size: 1.25rem;
+  padding: 0.8rem 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   background-color: #191913;
   color: #fff;
   border-radius: 1rem;
   border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#reset-btn:hover {
+  background-color: #005f73;
+}
+
+/* Responsive Design */
+
+@media (max-width: 480px) {
+  h1 {
+    height: 3.5rem;
+    line-height: 3.5rem;
+  }
+
+  #ins {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    height: 60vh;
+  }
+
+  .game {
+    width: 90vmin;
+    height: 90vmin;
+    gap: 1.3rem;
+  }
+
+  .box {
+    height: 26vmin;
+    width: 26vmin;
+  }
+
+  #print {
+    font-size: 1.5rem;
+  }
+
+  #reset-btn {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.2rem;
+  }
 }
