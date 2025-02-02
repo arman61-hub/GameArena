@@ -1,84 +1,207 @@
-*{
+* {
     margin: 0;
     padding: 0;
     text-align: center;
     background-color: lightcyan;
 }
 
-h1{
+h1 {
     background-color: #081b31;
     color: #fff;
     height: 5rem;
     line-height: 5rem;
+    font-size: 2rem;
 }
 
-.choice{
-    height: 165px;
-    width: 165px;
+.choice {
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
+    transition: background-color 0.3s ease;
 }
 
-.choice:hover{
+.choice:hover {
     cursor: pointer;
     background-color: #081b31;
 }
 
-img{
-    height: 150px;
-    width: 150px;
+img {
+    height: 140px;
+    width: 140px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.choices{
+.choices {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-    margin-top: 5rem;
-}
-
-.score-board{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     margin-top: 3rem;
-    gap: 5rem;
 }
 
-#user-score, 
-#comp-score{
-    font-size: 4rem;
+.score-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    gap: 3rem;
 }
 
-.msg-container{
-    margin-top: 5rem;
+#user-score,
+#comp-score {
+    font-size: 3rem;
 }
 
-#msg{
+.msg-container {
+    margin-top: 3rem;
+}
+
+#msg {
     background-color: #081b31;
     color: #fff;
-    font-size: 2rem;
-    display: inline;
+    font-size: 1.5rem;
+    display: inline-block;
     padding: 1rem;
     border-radius: 1rem;
 }
 
 #reset-btn {
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
     margin-top: 2rem;
     background-color: #081b31;
     color: white;
     border: none;
     border-radius: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #reset-btn:hover {
     background-color: #005f73;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 1.75rem;
+        height: 4.5rem;
+        line-height: 4.5rem;
+    }
+
+    .choice {
+        height: 130px;
+        width: 130px;
+    }
+
+    img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .choices {
+        gap: 1.25rem;
+    }
+
+    .score-board {
+        font-size: 1.5rem;
+    }
+
+    #user-score,
+    #comp-score {
+        font-size: 2.8rem;
+    }
+
+    #msg {
+        font-size: 1.25rem;
+    }
+
+    #reset-btn {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        height: 4rem;
+        line-height: 4rem;
+    }
+
+    .choice {
+        height: 120px;
+        width: 120px;
+    }
+
+    img {
+        height: 110px;
+        width: 110px;
+    }
+
+    .choices {
+        gap: 1rem;
+    }
+
+    .score-board {
+        font-size: 1.25rem;
+    }
+
+    #user-score,
+    #comp-score {
+        font-size: 2.5rem;
+    }
+
+    #msg {
+        font-size: 1.25rem;
+    }
+
+    #reset-btn {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.25rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    .choice {
+        height: 100px;
+        width: 100px;
+    }
+
+    img {
+        height: 90px;
+        width: 90px;
+    }
+
+    .choices {
+        gap: 0.75rem;
+    }
+
+    .score-board {
+        font-size: 1rem;
+    }
+
+    #user-score,
+    #comp-score {
+        font-size: 2rem;
+    }
+
+    #msg {
+        font-size: 1rem;
+    }
+
+    #reset-btn {
+        font-size: 0.875rem;
+    }
 }
