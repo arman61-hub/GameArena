@@ -95,15 +95,40 @@ form #sub:hover {
     font-size: 1.5rem;
 }
 
-h2 {
-    background-color: darkcyan;
-    color: #fff;
-    line-height: 3rem;
+.lowOrHi h2 {
+    font-size: 2rem;  /* Large text for better readability */
+    font-weight: bold;
     text-align: center;
-    margin: 10px auto;
-    width: 550px;
-    border-radius: 20px;
-    font-size: 1.5rem;
+    margin: 15px auto;
+    padding: 12px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Correct Guess */
+.lowOrHi h2.win {
+    color: white;
+    background-color: green;
+}
+
+/* Game Over */
+.lowOrHi h2.lose {
+    color: white;
+    background-color: red;
+}
+
+/* Too Low */
+.lowOrHi h2.low {
+    color: white;
+    background-color: orange;
+}
+
+/* Too High */
+.lowOrHi h2.high {
+    color: white;
+    background-color: blue;
 }
 
 button {
@@ -206,6 +231,12 @@ button {
     .rule p {
         font-size: 1rem;
     }
+
+    .lowOrHi h2 {
+        font-size: 1.75rem;
+        padding: 10px;
+        max-width: 500px;
+    }
 }
 
 /* Small Screens (iPhone / Smaller Devices) */
@@ -243,5 +274,11 @@ button {
     .guesses, .lastResult {
         font-size: 1.2rem;
         line-height: 1.6;
+    }
+
+    .lowOrHi h2 {
+        font-size: 1.5rem;
+        padding: 8px;
+        max-width: 90%;
     }
 }
